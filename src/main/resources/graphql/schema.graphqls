@@ -1,0 +1,23 @@
+type Query{
+    clients : [Client]
+    clientByNom (nom:String) : [Client]
+}
+
+type Commande{
+     id:ID
+     Idclient:ID
+
+}
+
+type Client{
+     id:ID
+     nom:String
+     prenom:String
+     commandes:[Commande]
+}
+
+type Mutation{
+     ajouterClient(nom : String!,prenom:String!) : Client
+     supprimerClient(id:ID!) : String
+
+}
