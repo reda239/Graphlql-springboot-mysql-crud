@@ -21,3 +21,15 @@ type Mutation{
      supprimerClient(id:ID!) : String
 
 }
+type Subscription {
+     clientEvents(id:ID!) : ClientEvent
+}
+
+type ClientEvent{
+     client: Client
+     event: ClientEventType
+}
+enum ClientEventType{
+    UPDATED
+    DELETED
+}
